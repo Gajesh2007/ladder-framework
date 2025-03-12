@@ -157,12 +157,9 @@ class RLTrainer:
             batch_size=self.config.BATCH_SIZE_3B if "3B" in model_path else self.config.BATCH_SIZE_7B,
             mini_batch_size=8,
             gradient_accumulation_steps=1,
-            ppo_epochs=4,
             max_grad_norm=1.0,
             seed=42,
             target_kl=self.config.KL_COEFFICIENT,
-            use_score_scaling=True,
-            use_score_norm=True,
             kl_penalty="kl",
             cliprange=self.config.CLIPPING_PARAMETER,
             cliprange_value=self.config.CLIPPING_PARAMETER,
@@ -171,7 +168,6 @@ class RLTrainer:
             gamma=1.0,
             lam=0.95,
             init_kl_coef=0.001,
-            adap_kl_ctrl=True,
         )
         
         # Initialize PPO trainer

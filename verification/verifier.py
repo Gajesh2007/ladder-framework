@@ -209,6 +209,22 @@ class IntegrationVerifier:
         # Clean the expression string
         expr_str = expr_str.strip()
         
+        # Extract content between [TEX] tags if present
+        tex_pattern = r'\[TEX\](.*?)\[/TEX\]'
+        tex_matches = re.findall(tex_pattern, expr_str)
+        if tex_matches:
+            # Use the first match if multiple are found
+            expr_str = tex_matches[0].strip()
+        
+        # Remove ANSWER: tags that might be present
+        expr_str = re.sub(r'ANSWER:\s*', '', expr_str)
+        
+        # Clean up any raw LaTeX formatting
+        expr_str = expr_str.replace('\\int', 'Integral')
+        expr_str = expr_str.replace('\\frac{', '(')
+        expr_str = expr_str.replace('}{', ')/')
+        expr_str = expr_str.replace('}', ')')
+        
         # Apply substitutions for mathematical functions and constants
         for pattern, replacement in self.substitutions.items():
             expr_str = re.sub(r'\b' + pattern + r'\b', replacement, expr_str)
@@ -222,6 +238,9 @@ class IntegrationVerifier:
             return expr
         except Exception as e:
             logger.error(f"Error parsing expression '{expr_str}': {e}")
+            # Provide more helpful error message
+            if '[TEX]' in expr_str or '\\' in expr_str:
+                logger.warning("The expression contains LaTeX formatting which couldn't be parsed properly.")
             raise VerificationError(f"Failed to parse expression: {expr_str}")
     
     def _verify_indefinite_integral(
