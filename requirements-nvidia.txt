@@ -1,0 +1,26 @@
+# Core dependencies with specific versions to avoid compatibility issues
+numpy==1.24.3
+scipy==1.10.1
+torch>=2.0.0
+transformers==4.31.0
+peft==0.5.0
+trl==0.7.1
+sympy==1.12.0
+pydantic==2.0.3
+tqdm==4.65.0
+pyarrow==12.0.1
+datasets==2.12.0
+safetensors==0.3.2
+accelerate==0.20.3
+scikit-learn==1.2.2
+
+# NVIDIA-specific packages for GPU acceleration
+bitsandbytes==0.41.1
+flash-attn==2.3.3
+
+# Additional requirements for proper functionality
+matplotlib==3.7.2
+pandas==2.0.3
+tensorboard==2.13.0
+wandb==0.15.5
+typing-extensions>=4.4.0
