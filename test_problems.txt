@@ -1,0 +1,10 @@
+Integrate x^2 dx
+Integrate sin(x) dx
+Integrate e^x dx
+Integrate ln(x) dx
+Integrate 1/(1+x^2) dx
+Integrate x*sin(x) dx
+Integrate x^2*e^x dx
+Integrate sqrt(x) dx
+Integrate 1/x dx
+Integrate cos^2(x) dx

@@ -1,0 +1,83 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+env/
+ENV/
+ladder_env/
+.env
+
+# PyCharm and other IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Model checkpoints, outputs and logs
+outputs/
+logs/
+checkpoints/
+.wandb/
+/model_cache/
+trained_models/
+
+# Dataset files
+data/
+large_dataset.json
+large_variants.json
+*.json
+
+# Serialized models, parameters and other large files
+*.pt
+*.pth
+*.bin
+*.h5
+*.pkl
+*.safetensors
+
+# OS specific
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Temporary files
+*.log
+*.tmp
+temp/
+tmp/
+
+# Misc
+ladder_framework.log
+PRD.md 
+TechnicalDoc.md
